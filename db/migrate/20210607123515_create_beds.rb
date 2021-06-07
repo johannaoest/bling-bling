@@ -6,7 +6,6 @@ class CreateBeds < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :location
       t.decimal :price
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
