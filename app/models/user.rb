@@ -7,5 +7,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, presence: true
-  validates :is_owner, inclusion: [true, false]
 end
