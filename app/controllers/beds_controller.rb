@@ -1,7 +1,7 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: %i[show delete edit update]
   def index
-    @beds = Bed.all
+    @beds = policy_scope(Bed).order(created_at: :desc)
   end
 
   def show
@@ -9,11 +9,14 @@ class BedsController < ApplicationController
 
   def new
     @bed = Bed.new
+    authorize @bed
   end
 
   def create
     bed = Bed.new(bed_params)
-    bed.user = User.find(params[:user_id])
+    bed.user = current_user
+    authorize @bed
+
     if bed.save
       redirect_to bed_path(bed)
     else
@@ -42,5 +45,6 @@ class BedsController < ApplicationController
 
   def set_bed
     @bed = Bed.find(params[:id])
+    authorize @bed
   end
 end
