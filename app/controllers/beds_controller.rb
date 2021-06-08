@@ -37,7 +37,7 @@ class BedsController < ApplicationController
   private
 
   def bed_params
-    params.require(:bed).permit(:category, :title, :price, :description, :location)
+    params.require(:bed).permit(:category, :title, :price, :description, :location, :photo)
   end
 
   def set_bed
