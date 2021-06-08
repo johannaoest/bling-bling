@@ -13,7 +13,13 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon justify-content-between sticky-top">
+
       <%= link_to "#", class: "navbar-brand" do %>
         <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
       <% end %>
@@ -59,6 +65,7 @@
         </ul>
       </div>
     </div>
+
     <%= yield %>
     <div class="footer">
       <div class="footer-links">
