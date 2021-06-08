@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :beds, except: [:create]
+  resources :beds, except: [:create] do
+    resources :bookings, only: %i[create new]
+  end
+
+  resources :bookings, only: %i[index show destroy]
 
   devise_for :users do
     resources :beds, only: [:create]
