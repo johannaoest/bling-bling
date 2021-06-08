@@ -1,7 +1,11 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: %i[show delete edit update]
   def index
-    @beds = Bed.all
+    if params[:category]
+      @beds = Bed.where(category: params[:category])
+    else
+      @beds = Bed.all
+    end
   end
 
   def show
