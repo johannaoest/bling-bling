@@ -15,3 +15,7 @@
 @import "components/footer";
 @import "components/bed_card";
 @import "pages/index";
+
+a, a:hover {
+    text-decoration: none !important;
+}
