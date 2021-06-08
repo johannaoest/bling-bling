@@ -1,2 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.product-container {
+    width: 95vw;
+    margin: auto;
+}
