@@ -1,4 +1,18 @@
-<h1>Beds#show</h1>
-<p>Find me in app/views/beds/show.html.erb</p>
+<%= @bed.title %>
+<div class="bed.name">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="bed-infos">
+    <div>
+      <p>Category: <%= @bed.category %></p>
+      <h2><%=@bed.title %></h2>
+      <%= @bed.description %>
+      <%=@bed.price %>
+      <%=@bed.location %>
+    </div>
+    <h2 class="bed-pricing">15$</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
 
 <%= cl_image_tag @article.photo.key, height: 300, width:400, crop: :fill %>

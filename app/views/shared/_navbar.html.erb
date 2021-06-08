@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon justify-content-between sticky-top">
 
-      <h2>Bling Bling</h2>
+      <h2>Bling Bling Bling</h2>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,9 +27,11 @@
           <li class="nav-item active">
             <%= link_to "My bookings", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item active">
-            <%= link_to "Offer your bed", "#", class: "nav-link" %>
-          </li>
+          <% if policy(Bed).create? %>
+            <li class="nav-item active">
+              <%= link_to "Offer your bed", new_bed_path, class: "nav-link" %>
+            </li>
+          <% end %>
           <li class="nav-item active">
             <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
           </li>
