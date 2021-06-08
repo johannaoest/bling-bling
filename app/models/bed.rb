@@ -3,7 +3,7 @@ class Bed < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
 
-  categories = %w[king-size single double water hammock air bunk round car]
+  categories = %w[king-size single double water hammock mattress bunk round car]
   validates :category, inclusion: { in: categories }
   validates :title, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0 }

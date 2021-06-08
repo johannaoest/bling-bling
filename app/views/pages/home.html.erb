@@ -7,58 +7,61 @@
   </div>
 </div>
 
+  categories = %w[king-size single double water hammock mattress bunk round car]
 
 <div class="categories-container">
     <h2>Choose your bed and you won't sleep bad</h2>
     <div class="row">
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1573209580826-13bdfd6db7e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80)">
-                Hammock
+                <%= link_to 'Hammock', beds_path(category: 'hammock') %>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://previews.123rf.com/images/anastasiia22/anastasiia221805/anastasiia22180500541/102208151-an-old-prison-cell-an-iron-bed-and-a-table.jpg)">
-                Single bed
+                <%= link_to 'Single bed', beds_path(category: 'single') %>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1585469434395-ac3d72767035?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRvdWJsZSUyMGJlZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)">
-                Double bed
+                <%= link_to 'Double bed', beds_path(category: 'double') %>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i1.adis.ws/i/hmk/100176?h=500&w=598&sm=CM&$Express%20Delivery-PDP$)">
-                Matress
+                <%= link_to 'Mattress', beds_path(category: 'mattress') %>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.mattressonline.co.uk/content/products/full/holidoze-waterbed2.jpg)">
-                Waterbed
+                <%= link_to 'Water bed', beds_path(category: 'water') %>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://decorexpro.com/images/article/orig/2017/10/dvuhyarusnaya-krovat-belogo-cveta-v-interere-detskoj-1.jpg)">
-                Bunkbed
+                <%= link_to 'Bunk bed', beds_path(category: 'bunk') %>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564032775255-6470bd36edf6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80)">
-                King size bed
+                <%= link_to 'King-size bed', beds_path(category: 'king-size') %>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://target.scene7.com/is/image/Target/GUEST_3c2bc77b-d16d-4091-ae46-1c01cf67a85a?wid=488&hei=488&fmt=pjpeg)">
-                Car bed
+                <%= link_to 'Car bed', beds_path(category: 'car') %>
             </div>
         </div>
         <div class="col-sm">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://sc02.alicdn.com/kf/HTB1UZvPXy_1gK0jSZFq763paXXaa/230820059/HTB1UZvPXy_1gK0jSZFq763paXXaa.png)">
-                Round bed
+                <%= link_to 'Round bed', beds_path(category: 'round') %>
             </div>
         </div>
     </div>
 </div>
+
+

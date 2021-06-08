@@ -1,7 +1,13 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: %i[show delete edit update]
   def index
-    @beds = policy_scope(Bed).order(created_at: :desc)
+
+    if params[:category]
+      @beds = policy_scope(Bed).where(category: params[:category]).order(created_at: :desc)
+    else
+      @beds = policy_scope(Bed).order(created_at: :desc)
+    end
+
   end
 
   def show
