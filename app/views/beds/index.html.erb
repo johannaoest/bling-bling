@@ -1,2 +1,15 @@
-<h1>Beds#index</h1>
-<p>Find me in app/views/beds/index.html.erb</p>
+<div class="product-container">
+    <h2>Browse the available beds</h2>
+    <div class="grid"> 
+        <% @beds.each do |bed| %>
+            <div class="card-product">
+                <img src="https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                <div class="card-product-infos">
+                    <h2><%= bed.title %></h2>
+                    <p><%= bed.description %></p>
+                </div>
+                <h2 class="bed-price"><%= bed.price %>$</h2>
+            </div>
+        <% end %>
+    </div>
+</div>
