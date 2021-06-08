@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show delete]
 
   def index
-    @bookings = Booking.where(user == current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def new

@@ -9,4 +9,6 @@ class Bed < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :location, presence: true
   validates :description, length: { minimum: 10 }
+
+  has_one_attached :photo
 end
