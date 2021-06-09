@@ -27,12 +27,13 @@ class BedsController < ApplicationController
   end
 
   def create
-    bed = Bed.new(bed_params)
-    bed.user = current_user
-    authorize bed
 
-    if bed.save
-      redirect_to bed_path(bed)
+    @bed = Bed.new(bed_params)
+    @bed.user = current_user
+    authorize @bed
+
+    if @bed.save
+      redirect_to bed_path(@bed)
     else
       render "new"
     end

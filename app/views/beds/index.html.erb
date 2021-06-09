@@ -5,7 +5,11 @@
         <% @beds.each do |bed| %>
           <%= link_to bed_path(bed) do %>
               <div class="card-product">
-                <%= cl_image_tag bed.photo.key %>
+                <% if bed.photo.attached? %>
+                  <%= cl_image_tag bed.photo.key %>
+                <% else%>
+                  <%= image_tag 'new_bed_icon.jpg' %>
+                <% end %>
                   <div class="card-product-infos">
                       <h2><%= bed.title %></h2>
                       <p><%= bed.description %></p>
