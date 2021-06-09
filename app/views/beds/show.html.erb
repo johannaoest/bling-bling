@@ -1,24 +1,19 @@
-<div class="container">
-  <div class="img">
+<div class="container w-50 p-3">
+  <div class="card-trip">
     <% if @bed.photo.attached? %>
-      <%= cl_image_tag @bed.photo.key, height: 100, width: 100, crop: :fill %>
-    <% else%>
-      <%= image_tag 'new_bed_icon.jpg', height: 100, width: 100 %>
+        <%= cl_image_tag @bed.photo.key %>
+      <% else%>
+        <%= image_tag 'new_bed_icon.jpg' %>
     <% end %>
-  </div>
-  <div class="bed-info">
-    <div>
-      <h2><%=@bed.title %></h2>
-      <p>Category: <%= @bed.category %></p>
-      <p>Description: <%= @bed.description %> </p>
-      <p> Address: <%=@bed.location %> </p>
-    </div>
-    <div>
-      <h2> Price: <%=@bed.price %> €/h </h2>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @bed.title %>, <%= @bed.category.capitalize %></h2>
+        <p><%= @bed.description %></p>
+        <p class="card-trip-owner">From: <%= @bed.user.email %></p>
+        <a class="btn btn-ghost" href="#">Book this bed!</a>
+      </div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <h2 class="card-trip-pricing"><%= @bed.price %> €</h2>
     </div>
   </div>
 </div>
-
-
-
