@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon justify-content-between sticky-top">
-
-    <div class="navbar-brand">
-      <%= image_tag "logo_small.png" %>
-    </div>
-
+    <%= link_to root_path do %>
+      <div class="navbar-brand">
+        <%= image_tag "logo_small.png" %>
+      </div>
+    <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,13 +21,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "My bookings", "#", class: "nav-link" %>
+            <%= link_to "My bookings", bookings_path, class: "nav-link" %>
           </li>
           <% if policy(Bed).create? %>
             <li class="nav-item active">
