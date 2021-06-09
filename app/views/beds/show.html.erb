@@ -1,18 +1,24 @@
-<%= @bed.title %>
-<div class="bed.name">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="bed-infos">
+<div class="container">
+  <div class="img">
+    <% if @bed.photo.attached? %>
+      <%= cl_image_tag @bed.photo.key, height: 100, width: 100, crop: :fill %>
+    <% else%>
+      <%= image_tag 'new_bed_icon.jpg', height: 100, width: 100 %>
+    <% end %>
+  </div>
+  <div class="bed-info">
     <div>
-      <p>Category: <%= @bed.category %></p>
       <h2><%=@bed.title %></h2>
-      <%= @bed.description %>
-      <%=@bed.price %>
-      <%=@bed.location %>
+      <p>Category: <%= @bed.category %></p>
+      <p>Description: <%= @bed.description %> </p>
+      <p> Address: <%=@bed.location %> </p>
     </div>
-    <h2 class="bed-pricing">15$</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <div>
+      <h2> Price: <%=@bed.price %> €/h </h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
   </div>
 </div>
 
 
-<%= cl_image_tag @article.photo.key, height: 300, width:400, crop: :fill %>
+
