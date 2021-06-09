@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[show delete]
+  before_action :set_booking, only: %i[show delete] 
 
   def index
     @bookings = Booking.where(user: current_user)
@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -14,9 +15,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.bed = Bed.find(params[:bed_id])
     @booking.total_price = @booking.bed.price * @booking.duration
-
+    authorize @booking
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render 'new'
     end
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def delete
+  def destroy
     @booking.destroy
     redirect_to beds_path
   end
@@ -34,6 +35,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params
