@@ -1,17 +1,24 @@
-<div class="product-container">
-    <h2>Browse the available beds</h2>
-    <div class="grid">
-      <% @beds.each do |bed| %>
-        <%= link_to bed_path(bed) do %>
-            <div class="card-product">
-                <img src="https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                <div class="card-product-infos">
-                    <h2><%= bed.title %></h2>
-                    <p><%= bed.description %></p>
-                </div>
-                <h2 class="bed-price"><%= bed.price %>$</h2>
-            </div>
+<div class="d-flex">
+  <div class="product-container">
+      <h2>Find all beds near you </h2>
+      <div class="grid">
+        <% @beds.each do |bed| %>
+          <%= link_to bed_path(bed) do %>
+              <div class="card-product">
+                <%= cl_image_tag bed.photo.key %>
+                  <div class="card-product-infos">
+                      <h2><%= bed.title %></h2>
+                      <p><%= bed.description %></p>
+                  </div>
+                  <h2 class="bed-price"><%= bed.price.floor %>$</h2>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-    </div>
+      </div>
+  </div>
+  <div id="map"
+       style="width: 900px; height: 100vh;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>

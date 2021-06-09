@@ -1,13 +1,20 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: %i[show delete edit update]
-  def index
 
+  def index
     if params[:category]
       @beds = policy_scope(Bed).where(category: params[:category]).order(created_at: :desc)
     else
       @beds = policy_scope(Bed).order(created_at: :desc)
     end
 
+    @markers = @beds.geocoded.map do |bed|
+      {
+        lat: bed.latitude,
+        lng: bed.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bed: bed })
+      }
+    end
   end
 
   def show
