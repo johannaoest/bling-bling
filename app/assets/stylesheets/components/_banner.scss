@@ -5,17 +5,18 @@
     height: 83vh;
     margin-bottom: 30px;
   }
-  
+
   .banner h1 {
     margin: 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 45px;
+    font-size: 55px;
     font-weight: bold;
   }
 
   .banner h2 {
       font-size: 35px;
+      color: white;
   }
   
   .banner p {
@@ -23,4 +24,17 @@
     color: white;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .search-button {
+    color: #322C26;
+    background-color: rgba($color: white, $alpha: 0.65);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .search-button:hover {
+    background-color: rgba($color: white, $alpha: 0.3);
+    color: #322C26;
   }
