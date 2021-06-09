@@ -10,7 +10,6 @@
         <h2><%= @bed.title %>, <%= @bed.category.capitalize %></h2>
         <p><%= @bed.description %></p>
         <p class="card-trip-owner">From: <%= @bed.user.email %></p>
-        <a class="btn btn-ghost" href="#">Book this bed!</a>
       </div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
       <h2 class="card-trip-pricing"><%= @bed.price %> €</h2>
@@ -19,12 +18,14 @@
 
 </div>
 
-<%= simple_form_for [@bed, @booking] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :duration %>
-  <%= f.submit 'Book bed', class:'btn btn-info' %>
-<% end %>
 
+<% if current_user != @bed.user%>
+  <%= simple_form_for [@bed, @booking] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :duration %>
+    <%= f.submit 'Book bed', class:'btn btn-info' %>
+  <% end %>
+<% end %>
 
 </div>
 

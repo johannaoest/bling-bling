@@ -1,7 +1,5 @@
 <h1>Your bookings</h1>
-<% @bookings.each do |booking| %>
-    <p><%= booking.bed.title%> bed booked by <%= booking.user.first_name %> from <%=booking.bed.user.first_name %></p>
-<% end %>
+
 
 <table class="table table-striped">
   <thead>
@@ -25,3 +23,4 @@
     <% end %>
   </tbody>
 </table>
+
