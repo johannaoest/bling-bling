@@ -16,4 +16,15 @@
       <h2 class="card-trip-pricing"><%= @bed.price %> €</h2>
     </div>
   </div>
+
 </div>
+
+<%= simple_form_for [@bed, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :duration %>
+  <%= f.submit 'Book bed', class:'btn btn-info' %>
+<% end %>
+
+
+</div>
+
