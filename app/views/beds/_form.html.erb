@@ -1,22 +1,22 @@
+  <%= simple_form_for(bed) do |f| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("new_bed_icon.jpg") %>)">
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div class="form-container">
+      <div class="container justify-content-center" >
+      <div class="modal-body">
+        <%= f.input :title %>
+        <%= f.input :location %>
+        <%= f.input :price %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :category, as: :select, collection: %w[king-size single double water hammock mattress bunk round car] %>
+      </div>
+    </div>
 
-<%= simple_form_for(bed) do |f| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("new_bed_icon.jpg") %>)">
-    <%= f.input :photo, as: :file %>
-  </div>
-<div class="container justify-content-center" >
-<div class="modal-body">
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :category, as: :select, collection: %w[king-size single double water hammock mattress bunk round car] %>
-</div>
 
-
-<div class="w-50 modal-content m-auto border border-white">
-    <%= f.submit 'Upload your Bed', class:'btn btn-info' %>
-<% end %>
+    <div class="w-50 modal-content m-auto bg-#475841">
+      <%= f.submit 'Upload your Bed', class:'btn btn-info' %>
+  <% end %>
     <button type="button" class="mt-2 btn btn-secondary" data-dismiss="modal">Back</button>
+    </div>
   </div>
-
-</div>
