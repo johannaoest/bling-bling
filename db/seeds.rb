@@ -8,7 +8,8 @@ bed = Bed.new(
   location: "Calle del Conde de Cartagena, 15, 28007 Madrid",
   price: 100,
   description: "The most comfortable prision bed in Madrid with white pillows.",
-  user: User.find(1)
+  user: User.find(1),
+  size: "Prison 10″ x 40″"
 )
 bed.photo.attach(io: file, filename: 'bed.png', content_type: 'image/png')
 bed.save!
@@ -20,7 +21,8 @@ bed = Bed.new(
   location: "Calle de Montesa, 39, 28006 Madrid",
   price: 2,
   description: "Ocean sound is included. Feel the beach in Madrid.",
-  user: User.find(1)
+  user: User.find(1),
+  size: "Water 120″ x 100″"
 )
 bed.photo.attach(io: file, filename: 'bed.png', content_type: 'image/png')
 bed.save!
@@ -32,7 +34,8 @@ bed = Bed.new(
   location: "Calle del Dr. Castelo, 30, 28009 Madrid",
   price: 1,
   description: "Colourful terasse with techno music. Enjoy your relaxing Nap.",
-  user: User.find(1)
+  user: User.find(1),
+  size: "Hammock 50″ x 80″"
 )
 bed.photo.attach(io: file, filename: 'bed.png', content_type: 'image/png')
 bed.save!
@@ -44,7 +47,8 @@ bed = Bed.new(
   location: "Calle de Goya, 87, 28001 Madrid",
   price: 5000,
   description: "Princess Car to rent for every princess in the world.",
-  user: User.find(1)
+  user: User.find(1),
+  size: "Queen 60″ x 80″"
 )
 bed.photo.attach(io: file, filename: 'bed.png', content_type: 'image/png')
 bed.save!

@@ -13,8 +13,12 @@
                   <div class="card-product-infos">
                       <h2><%= bed.title %></h2>
                       <p><%= bed.description %></p>
+
+                      <p><i class="fas fa-vector-square"></i><%= bed.size %> </p>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+
+                      <h2 class="bed-price"><span><%= bed.price.floor %>$</span></h2>
                   </div>
-                  <h2 class="bed-price"><%= bed.price.floor %>$</h2>
               </div>
             <% end %>
           <% end %>

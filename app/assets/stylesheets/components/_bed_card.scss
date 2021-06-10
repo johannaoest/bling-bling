@@ -1,6 +1,6 @@
 .card-product {
     overflow: hidden;
-    height: 120px;
+    height: 100%;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
@@ -21,18 +21,34 @@
     margin: 0;
   }
 
-  .bed-price {
-    padding: 20px;
-  }
-
   .card-product p {
     font-size: 12px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+    margin-bottom: 5px;
+  }
+.fa-vector-square {
+    margin-right:5px
   }
 
   .card-product .card-product-infos {
     padding: 16px;
+    width: 168px;
+  }
+
+  .bed-price {
+    text-align: right;
+    margin-top: 16px !important;
+    span {
+      color: white;
+    background: #212529;
+    border-radius: 41px;
+    padding: 4px 8px;
+    }
+  }
+
+  .fa-star {
+    color: #ffc107;
   }
