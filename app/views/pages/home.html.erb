@@ -1,10 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1564019472231-4586c552dc27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80);">
-  <div class="container">
-    <h1>Bling Bling Bling</h1>
-    <h2>The app what turns your siesta into a fiesta!</h2>
-    <p>Find the perfect bed to have a beautiful siesta this afternoon!</p>
-    <%= link_to 'Search near you', beds_path, class:'search-button' %>
-  </div>
+<div class="banner-container">
+    <div class="banner">
+    <div class="text-on-banner">
+        <h2>The app what turns your siesta into a fiesta!</h2>
+        <p>Find the perfect bed to have a beautiful siesta this afternoon!
+        And some more text about bed and how amazing they are. Beds and dreams and pillows and stuff! Blankets too. omg I would like to sleep</p>
+        <%= link_to 'Search near you', beds_path, class:'white-btn' %>
+    </div>
+    <div class="banner-image">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1039&q=80" alt="messy bed">
+    </div>
+    </div>
+    <div class="circles-image">
+        <%= image_tag("bgbannerunder.png") %>
+    </div>
 </div>
 <div class="categories-container">
     <h2>Choose your bed and you won't sleep bad</h2>
