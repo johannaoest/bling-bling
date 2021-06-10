@@ -1,6 +1,6 @@
 class Bed < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
   categories = %w[king-size single double water hammock mattress bunk round car]
