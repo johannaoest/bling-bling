@@ -1,5 +1,6 @@
 <div class="d-flex">
   <div class="product-container">
+    <div class="background-container">
       <h2>Find all beds near you </h2>
       <div class="grid">
         <% @beds.each do |bed| %>
@@ -23,9 +24,10 @@
             <% end %>
           <% end %>
       </div>
+    </div>
   </div>
   <div id="map"
-       style="width: 900px; height: 100vh;"
+       style="width: 1140px; height: 90vh;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
