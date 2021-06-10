@@ -1,5 +1,6 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: %i[show delete edit update]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     if params[:category]
@@ -39,7 +40,7 @@ class BedsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @bed.destroy
     redirect_to beds_path
   end
