@@ -25,5 +25,8 @@ a, a:hover {
 }
 
 body {
+    position: relative;
+    min-height: 100vh;
     font-family: 'Raleway', sans-serif !important;
+    background-image: url("bg.png");
 }

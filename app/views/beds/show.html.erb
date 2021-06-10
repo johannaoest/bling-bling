@@ -11,7 +11,11 @@
         <p><%= @bed.description %></p>
         <p class="card-trip-owner">From: <%= @bed.user.email %></p>
       </div>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <% if @bed.user.avatar.attached? %>
+        <%= cl_image_tag @bed.user.avatar.key, class: "card-trip-user avatar-bordered" %>
+      <% else %>
+        <%= image_tag "empty_avatar.webp", class: "card-trip-user avatar-bordered" %>
+      <%end%>
       <h2 class="card-trip-pricing"><%= @bed.price %> €</h2>
     </div>
   </div>
