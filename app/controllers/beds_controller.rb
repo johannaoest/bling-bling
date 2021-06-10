@@ -2,7 +2,10 @@ class BedsController < ApplicationController
   before_action :set_bed, only: %i[show delete edit update]
 
   def index
-    if params[:category]
+    if params[:search].present?
+      @beds = policy_scope(Bed).search_by_title_and_location(params[:search])
+
+    elsif params[:category]
       @beds = policy_scope(Bed).where(category: params[:category]).order(created_at: :desc)
     else
       @beds = policy_scope(Bed).order(created_at: :desc)
