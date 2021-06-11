@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'reviews/create'
   resources :beds do
     resources :bookings, only: %i[create new]
+    resources :reviews, only: %i[create]
   end
 
   resources :bookings, only: %i[index show destroy]
