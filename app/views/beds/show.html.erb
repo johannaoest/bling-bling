@@ -2,9 +2,20 @@
   <div class="img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= choose_image(@bed) %>)">
   </div>
   <div class="info">
-    <h2><%= @bed.title %> - <%= @bed.category %></h2>
+    <h2><%= @bed.title %> - <%= @bed.category.capitalize %></h2>
     <p><%= @bed.description %></p>
+    <div class="reviews">
+      <ul>
+        <% @bed.reviews.each do |review| %>
+        <li>
+        <p> <strong><%= review.user.first_name %></strong> - <%= review.comment %></p>
+        </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
+</div>
+<div class="show-container">
   <% if current_user != @bed.user%>
     <%= simple_form_for [@bed, @booking] do |f| %>
       <%= f.input :date %>
@@ -15,27 +26,16 @@
     <%= link_to "Update your bed", edit_bed_path, class: "green-btn" %>
     <%= link_to "Delete your bed", bed_path(@bed), class: "green-btn", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
   <% end %>
-</div>
-
-
-<div>
-    <ul>
-    <% @bed.reviews.each do |review| %>
-    <li>
-    <p> <%= review.user.first_name %></p>
-    <p> <%= review.comment %> </p>
-    </li>
+  <div class="booking-form">
+        <% if params[:review].present? %>
+      <%= simple_form_for [@bed, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.submit 'Add', class:'btn btn-info' %>
+      <% end %>
     <% end %>
-    </ul>
+  </div>
 </div>
 
-
-<% if params[:review].present? %>
-  <%= simple_form_for [@bed, @review] do |f| %>
-    <%= f.input :comment %>
-    <%= f.submit 'Add', class:'btn btn-info' %>
-  <% end %>
-<% end %>
 
 </div>
 
