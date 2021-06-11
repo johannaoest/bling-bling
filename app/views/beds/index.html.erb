@@ -1,11 +1,15 @@
 <div class="d-flex">
   <div class="product-container">
     <div class="background-container">
-      <h2>Find all beds near you </h2>
+      <% if @editor %>
+        <h2>Your beds </h2>
+      <% else %>
+        <h2>Find all beds near you </h2>
+      <% end %>
       <div class="grid">
         <% @beds.each do |bed| %>
           <%= link_to bed_path(bed) do %>
-              <div class="card-product">
+            <div class="card-product">
                 <% if bed.photo.attached? %>
                   <%= cl_image_tag bed.photo.key %>
                 <% else%>

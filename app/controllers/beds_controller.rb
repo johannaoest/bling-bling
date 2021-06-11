@@ -3,9 +3,12 @@ class BedsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
   def index
+    @editor = false
     if params[:search].present?
       @beds = policy_scope(Bed).search_by_title_and_location(params[:search])
-
+    elsif params[:my_beds]
+      @beds = policy_scope(Bed).where(user: current_user).order(created_at: :desc)
+      @editor = true
     elsif params[:category]
       @beds = policy_scope(Bed).where(category: params[:category]).order(created_at: :desc)
     else
@@ -52,7 +55,7 @@ class BedsController < ApplicationController
   end
 
   def update
-    @bed.update[bed_params]
+    @bed.update(bed_params)
     redirect_to bed_path(@bed)
   end
 
