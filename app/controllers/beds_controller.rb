@@ -11,7 +11,7 @@ class BedsController < ApplicationController
     elsif params[:category]
       @beds = policy_scope(Bed).where(category: params[:category]).order(created_at: :desc)
     else
-      @beds = policy_scope(Bed).order(created_at: :desc)
+      @beds = policy_scope(Bed).where.not(user: current_user).order(created_at: :desc)
     end
 
     @markers = @beds.geocoded.map do |bed|
