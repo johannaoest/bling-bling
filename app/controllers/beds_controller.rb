@@ -1,11 +1,13 @@
 class BedsController < ApplicationController
-  before_action :set_bed, only: %i[show delete edit update]
+  before_action :set_bed, only: %i[show delete edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
 
   def index
+    @editor = false
     if params[:search].present?
       @beds = policy_scope(Bed).search_by_title_and_location(params[:search])
-
+    elsif params[:my_beds]
+      @beds = policy_scope(Bed).where(user: current_user).order(created_at: :desc)
     elsif params[:category]
       @beds = policy_scope(Bed).where(category: params[:category]).order(created_at: :desc)
     else
@@ -46,14 +48,15 @@ class BedsController < ApplicationController
 
   def destroy
     @bed.destroy
-    redirect_to beds_path
+    redirect_to beds_path(my_beds: true)
   end
 
   def edit
   end
 
+
   def update
-    @bed.update[bed_params]
+    @bed.update(bed_params)
     redirect_to bed_path(@bed)
   end
 
