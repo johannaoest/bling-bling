@@ -11,7 +11,7 @@
         <div class="col">
           <%= simple_form_for :search, url: beds_path, method: :get do |f| %>
           <div class="search-form-control form-group">
-            <input class="form-control string required" type="text" name="search" id="search_query" value="<%= params[:search] %>" />
+            <input class="form-control string required" autocomplete="off" type="text" name="search" id="search_query" value="<%= params[:search] %>" />
             <button name="button" type="submit" class="btn btn-flat">
               <i class="fas fa-search"></i> Search
             </button>
@@ -46,9 +46,9 @@
                 </div>
             </li>
           <% else %>
-            <li class="nav-item active">
-              <%= link_to "Sign in", new_user_session_path, class: "green-btn" %>
-            </li>
+              <li class="nav-item active">
+                <%= link_to "Sign in", new_user_session_path, class: "green-btn" %>
+              </li>
           <% end %>
         </ul>
       </div>
