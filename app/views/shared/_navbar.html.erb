@@ -41,7 +41,7 @@
                   <%= image_tag "empty_avatar.webp", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, width: 40, height: 40 %>
                 <%end%>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <%= link_to "Profile", "#", class: "dropdown-item" %>
+                  <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
                   <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
                 </div>
             </li>
