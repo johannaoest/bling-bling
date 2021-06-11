@@ -11,16 +11,22 @@
     </thead>
 
     <tbody>
-      <% @bookings.each do |booking| %>
-        <tr>
-          <td><%= booking.bed.title %></td>
-          <td><%= booking.date %></td>
-          <td><%= booking.duration %></td>
-          <td><%= booking.bed.user.first_name %></td>
-          <td><%= link_to "Add Review", bed_path(booking.bed, review: true), class: "green-btn" %></td>
-        </tr>
+      <% unless @bookings.empty? %>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.bed.title %></td>
+            <td><%= booking.date %></td>
+            <td><%= booking.duration %></td>
+            <td><%= booking.bed.user.first_name %></td>
+            <td><%= link_to "Add Review", bed_path(booking.bed, review: true), class: "green-btn" %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
+  <% if @bookings.empty? %>
+    <p>Book your first bed!</p>
+    <%= link_to 'Explore beds', beds_path, class:"green-btn" %>
+  <% end %>
 </div>
 
