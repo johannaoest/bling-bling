@@ -16,3 +16,27 @@
     <%= link_to "Delete your bed", bed_path(@bed), class: "green-btn", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
   <% end %>
 </div>
+<% end %>
+
+<div>
+    <ul>
+    <% @bed.reviews.each do |review| %>
+    <li>
+    <p> <%= review.user.first_name %></p>
+    <p> <%= review.comment %> </p>
+    </li>
+    <% end %>
+    </ul>
+</div>
+
+
+<% if params[:review].present? %>
+  <%= simple_form_for [@bed, @review] do |f| %>
+    <%= f.input :comment %>
+    <%= f.submit 'Add', class:'btn btn-info' %>
+  <% end %>
+<% end %>
+
+</div>
+
+

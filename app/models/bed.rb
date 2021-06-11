@@ -1,7 +1,7 @@
 class Bed < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  has_many :reviews, through: :bookings
+  has_many :reviews
 
   categories = %w[king-size single double water hammock mattress bunk round car]
   validates :category, inclusion: { in: categories }
