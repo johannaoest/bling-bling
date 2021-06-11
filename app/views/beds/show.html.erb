@@ -4,17 +4,16 @@
   <div class="info">
     <h2><%= @bed.title %> - <%= @bed.category.capitalize %></h2>
     <p><%= @bed.description %></p>
-    <div class="reviews">
-      <ul>
-        <% @bed.reviews.each do |review| %>
-        <li>
-        <p> <strong><%= review.user.first_name %></strong> - <%= review.comment %></p>
-        </li>
-        <% end %>
-      </ul>
-    </div>
   </div>
 </div>
+  <div class="reviews">
+        <% @bed.reviews.each do |review| %>
+        <div class="show-container">
+          <p> <strong><%= review.user.first_name %></strong> - <%= review.comment %></p>
+        </div>
+        <% end %>
+  </div>
+  </div>
 <div class="show-container">
   <% if current_user != @bed.user%>
     <%= simple_form_for [@bed, @booking] do |f| %>
