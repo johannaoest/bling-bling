@@ -1,35 +1,18 @@
-<div class="container w-50 p-3">
-  <div class="card-trip">
-    <% if @bed.photo.attached? %>
-        <%= cl_image_tag @bed.photo.key %>
-      <% else%>
-        <%= image_tag 'new_bed_icon.jpg' %>
-    <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @bed.title %>, <%= @bed.category.capitalize %></h2>
-        <p><%= @bed.description %></p>
-        <p class="card-trip-owner">From: <%= @bed.user.email %></p>
-      </div>
-      <% if @bed.user.avatar.attached? %>
-        <%= cl_image_tag @bed.user.avatar.key, class: "card-trip-user avatar-bordered" %>
-      <% else %>
-        <%= image_tag "empty_avatar.webp", class: "card-trip-user avatar-bordered" %>
-      <%end%>
-      <h2 class="card-trip-pricing"><%= @bed.price %> €</h2>
-    </div>
+<div class="show-container">
+  <div class="img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= choose_image(@bed) %>)">
   </div>
-
-</div>
-
-
-<% if current_user != @bed.user%>
-  <%= simple_form_for [@bed, @booking] do |f| %>
-    <%= f.input :date %>
-    <%= f.input :duration %>
-    <%= f.submit 'Book bed', class:'btn btn-info' %>
+  <div class="info">
+    <h2><%= @bed.title %> - <%= @bed.category %></h2>
+    <p><%= @bed.description %></p>
+  </div>
+  <% if current_user != @bed.user%>
+    <%= simple_form_for [@bed, @booking] do |f| %>
+      <%= f.input :date %>
+      <%= f.input :duration %>
+      <%= f.submit 'Book bed', class:'green-btn' %>
+    <% end %>
+  <% else %>
+    <%= link_to "Update your bed", edit_bed_path, class: "green-btn" %>
+    <%= link_to "Delete your bed", bed_path(@bed), class: "green-btn", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
   <% end %>
-<% end %>
-
 </div>
-
