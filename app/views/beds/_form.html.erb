@@ -1,5 +1,5 @@
   <%= simple_form_for(bed) do |f| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("new_bed_icon.jpg") %>)">
+    <div class="img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("hammocky.jpg") %>)">
       <%= f.input :photo, as: :file %>
     </div>
     <div class="form-container">
@@ -15,8 +15,8 @@
 
 
     <div class="w-50 modal-content m-auto bg-#475841">
-      <%= f.submit 'Upload your Bed', class:'btn btn-info' %>
+      <%= f.submit 'Upload your Bed', class:'green-btn' %>
   <% end %>
-    <button type="button" class="mt-2 btn btn-secondary" data-dismiss="modal">Back</button>
+    <button type="button" class="green-btn mt-3" data-dismiss="modal">Back</button>
     </div>
   </div>

@@ -10,9 +10,26 @@
   color: white;
   border-radius: 5px;
   padding: 15px;
-
+  border: white 3px solid;
 }
 
 body {
   background-color: white !important;
+}
+
+.img-top {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 25px;
+  border: 3px white solid;
 }
