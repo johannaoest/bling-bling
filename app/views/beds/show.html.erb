@@ -30,17 +30,18 @@
       </div>
     <% end %>
   </div>
-  <div class="review-title">
-    <h2>Reviews</h2>
-  </div>
-  <div class="reviews">
-        <% @bed.reviews.each do |review| %>
+  <% unless @bed.reviews.empty? %>
+    <div class="review-title">
+      <h2>Reviews</h2>
+    </div>
+    <div class="reviews">
+      <% @bed.reviews.each do |review| %>
         <div class="show-container">
           <p> <strong><%= review.user.first_name %></strong> - <%= review.comment %></p>
         </div>
-        <% end %>
-  </div>
-
+      <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
 
