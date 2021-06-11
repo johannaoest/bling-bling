@@ -1,6 +1,20 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.booking-container {
+    width: 60vw;
+    margin: auto;
+    background-color: rgba($color: #475841, $alpha: 0.85);
+    padding: 25px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 25px;
+}
+
+.table {
+    color: white;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
