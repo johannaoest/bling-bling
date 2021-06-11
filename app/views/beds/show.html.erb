@@ -16,24 +16,24 @@
   </div>
 </div>
 <div class="show-container">
-  <% if current_user != @bed.user%>
+  <% if current_user != @bed.user && params[:review].present? == false %>
     <%= simple_form_for [@bed, @booking] do |f| %>
       <%= f.input :date %>
       <%= f.input :duration %>
       <%= f.submit 'Book bed', class:'green-btn' %>
     <% end %>
-  <% else %>
+  <% elsif current_user == @bed.user %>
+
     <%= link_to "Update your bed", edit_bed_path, class: "green-btn" %>
     <%= link_to "Delete your bed", bed_path(@bed), class: "green-btn", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
-  <% end %>
-  <div class="booking-form">
-        <% if params[:review].present? %>
+  <% elsif params[:review].present? %>
+    <div class="booking-form" style="color: white">
       <%= simple_form_for [@bed, @review] do |f| %>
         <%= f.input :comment %>
-        <%= f.submit 'Add', class:'btn btn-info' %>
+        <%= f.submit 'Add', class:'green-btn' %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 
