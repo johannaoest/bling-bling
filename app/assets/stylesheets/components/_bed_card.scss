@@ -7,11 +7,12 @@
     color: black;
     align-items: center;
     border: 5px white solid;
+    width: 530px;
   }
 
   .card-product img {
     height: 100%;
-    width: 120px;
+    width: 190px;
     object-fit: cover;
   }
 
@@ -22,7 +23,7 @@
   }
 
   .card-product p {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
@@ -35,7 +36,7 @@
 
   .card-product .card-product-infos {
     padding: 16px;
-    width: 168px;
+    width: 300px;
   }
 
   .bed-price {

@@ -3,13 +3,14 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
 }
 
 .product-container {
-    padding: 75px;
-
+    padding-top: 25px;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
 .style {
@@ -21,5 +22,13 @@
     padding: 25px;
     border-radius: 5px;
     color: white;
+}
+
+#map {
+    position: sticky;
+    top: 133px;
+    margin-top: 25px;
+    border: #475841 5px solid;
+    border-radius: 5px;
 }
 
